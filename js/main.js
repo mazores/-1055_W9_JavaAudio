@@ -84,7 +84,22 @@
             }
 
             // create and play explosion sound
-            
+            let explosion = document.createElement('audio'); //creates audio tag <audio>
+
+            explosion.src = "audio/explosion.mp3";
+            //<audio src="audio/laser.mp3">
+            explosion.load();
+
+            //remove the audio element when we're done with it
+            explosion.addEventListener('ended', function() {
+              document.body.removeChild(explosion);
+            });
+
+            document.body.appendChild(explosion);
+
+            //play what u gave me
+            explosion.play();
+
           }
         });
 
@@ -137,7 +152,23 @@
     bullets.push(newBullet);
 
     // create and play cheesy laser sound
-    
+    let laser = document.createElement('audio'); //creates audio tag <audio>
+
+    laser.src = "audio/laser.mp3";
+    //<audio src="audio/laser.mp3">
+    laser.load();
+
+    //remove the audio element when we're done with it
+    laser.addEventListener('ended', function() {
+      document.body.removeChild(laser);
+    });
+
+    document.body.appendChild(laser);
+
+    //play what u gave me
+    laser.play();
+
+
   }
 
   function movePlayer(e) {
